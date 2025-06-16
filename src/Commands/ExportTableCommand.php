@@ -12,7 +12,7 @@ class ExportTableCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'app:export-table {table}';
+    protected $signature = 'reseedr:export-table {table}';
 
     /**
      * The console command description.

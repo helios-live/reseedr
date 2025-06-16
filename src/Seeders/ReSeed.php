@@ -11,15 +11,16 @@ class ReSeed extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run($args = []): void
     {
+
         $dir = storage_path("app/private/seed-data/");
         $files = scandir($dir);
         $files = array_filter($files, function($file) {
             return pathinfo($file, PATHINFO_EXTENSION) === 'php';
         });
 
-        $tables = array_map(function($file) {
+        $tables = $args['tables'] ?? array_map(function ($file) {
             return pathinfo($file, PATHINFO_FILENAME);
         }, $files);
 
