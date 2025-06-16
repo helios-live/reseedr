@@ -1,0 +1,34 @@
+{
+  "name": "helios-live/reseedr",
+  "description": "Easily create snapshots of tables and seed them back in",
+  "keywords": [
+    "dump",
+    "import",
+    "export",
+    "seeder"
+  ],
+  "homepage": "https://github.com/helios-live/reseedr",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexandru Eftimie",
+      "email": "alex@helios.live",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "illuminate/contracts": "^9.28|^10.0|^11.0|^12.0",
+    "spatie/laravel-package-tools": "^1.92"
+  },
+  "autoload": {
+    "psr-4": {
+      "HeliosLive\\Reseeder\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "HeliosLive\\Reseeder\\Tests\\": "tests"
+    }
+  }
+}
