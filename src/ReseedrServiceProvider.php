@@ -4,6 +4,7 @@ namespace HeliosLive\Reseeder;
 
 use \HeliosLive\Reseeder\Commands\ExportTableCommand;
 use \Spatie\LaravelPackageTools\PackageServiceProvider;
+use \Spatie\LaravelPackageTools\Package;
 
 class ReseedrServiceProvider extends PackageServiceProvider
 {
