@@ -30,5 +30,12 @@
     "psr-4": {
       "HeliosLive\\Reseeder\\Tests\\": "tests"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "HeliosLive\\Reseeder\\ReseedrServiceProvider"
+      ]
+    }
   }
 }
