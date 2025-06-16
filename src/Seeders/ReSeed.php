@@ -13,7 +13,7 @@ class ReSeed extends Seeder
      */
     public function run($tables = []): void
     {
-        $dir = storage_path("app/seed-data/");
+        $dir = database_path("dumps/");
         $files = scandir($dir);
         $files = array_filter($files, function($file) {
             return pathinfo($file, PATHINFO_EXTENSION) === 'php';

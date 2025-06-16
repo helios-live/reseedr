@@ -11,7 +11,7 @@ php artisan reseedr:export-table terms
 #### **`DatabaseSeeder.php`**:
 ```php
 // if no options are given to the call, the seeder scans the
-// storage/app/seed-data/ directory for php files and uses that
+// database/dumps/ directory for php files and uses that
 // however the ordering might not be what you need
 $this->call(\HeliosLive\Reseeder\Seeders\ReSeed::class);
 ````
