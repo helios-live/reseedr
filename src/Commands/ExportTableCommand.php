@@ -35,7 +35,7 @@ class ExportTableCommand extends Command
 
         $data = "<?php \n return " . var_export($data, true) . ";";
 
-        $dir = storage_path('app/private/seed-data/');
+        $dir = storage_path('app/seed-data/');
         if(!file_exists($dir)) {
             mkdir($dir);
         }
