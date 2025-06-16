@@ -5,15 +5,15 @@ namespace HeliosLive\Reseeder;
 use \HeliosLive\Reseeder\Commands\ExportTableCommand;
 use \Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class DumpImportExportServiceProvider extends PackageServiceProvider
+class ReseedrServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('dump-import-exporter')
+            ->name('reseedr')
 //            ->hasConfigFile()
 //            ->hasMigration('create_package_tables')
-            ->publishesServiceProvider(DumpImportExportServiceProvider::class)
+            ->publishesServiceProvider(ReseedrServiceProvider::class)
             ->hasConsoleCommand(ExportTableCommand::class);
 //            ->hasInstallCommand(function(InstallCommand $command) {
 //                $command
