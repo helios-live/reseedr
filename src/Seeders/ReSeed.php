@@ -11,18 +11,19 @@ class ReSeed extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run($args = []): void
+    public function run($tables = []): void
     {
-
         $dir = storage_path("app/private/seed-data/");
         $files = scandir($dir);
         $files = array_filter($files, function($file) {
             return pathinfo($file, PATHINFO_EXTENSION) === 'php';
         });
 
-        $tables = $args['tables'] ?? array_map(function ($file) {
-            return pathinfo($file, PATHINFO_FILENAME);
-        }, $files);
+        if(!count($tables)) {
+            $tables = array_map(function ($file) {
+                return pathinfo($file, PATHINFO_FILENAME);
+            }, $files);
+        }
 
         foreach ($tables as $table) {
 
@@ -33,7 +34,7 @@ class ReSeed extends Seeder
                 \Illuminate\Support\Facades\Log::warning("Dump: Table export for table '$table' is empty.");
                 continue;
             }
-             DB::table($table)->insert($data);
+            DB::table($table)->insert($data);
         }
     }
 }
